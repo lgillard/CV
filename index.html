@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <!--
+      L'id sur <title> est non standard.
+      customize-job-title.js met à jour document.title directement.
+   -->
+    <title>CV – Julien Gillard · Développeur Fullstack</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link crossorigin href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&display=swap"
+          rel="stylesheet"/>
+    <link href="./styles.css" rel="stylesheet"/>
+</head>
+<body>
+
+<a class="skip-link" href="#main-content">Aller au contenu principal</a>
+
+<div class="page">
+    <header class="cv-header">
+        <div>
+            <h1>Julien <span class="name-last">Gillard</span></h1>
+            <p id="job-title">Développeur Fullstack</p>
+        </div>
+
+        <address class="cv-contact">
+            <a aria-label="Envoyer un e-mail à Julien Gillard"
+               href="mailto:dev.jg.pro@proton.me">dev.jg.pro@proton.me</a>
+            <a aria-label="Appeler le 07 70 12 22 60" href="tel:+33770122260">07 70 12 22 60</a>
+            <a aria-label="Profil LinkedIn de Julien Gillard (nouvelle fenêtre)"
+               href="https://www.linkedin.com/in/julien-gillard-4b76b2131/"
+               rel="noopener noreferrer"
+               target="_blank">linkedin.com/in/julien-gillard</a>
+            <span>44150 Ancenis - France</span>
+        </address>
+    </header>
+
+    <div class="cv-body">
+        <main class="cv-main" id="main-content" tabindex="-1">
+            <p class="intro">
+                Développeur <span lang="en">fullstack</span> avec <strong>7 ans d'expérience</strong>, passionné par
+                l'impact utilisateur, la qualité logicielle et le partage de connaissance. Spécialisé en backend, avec
+                une bonne maîtrise du frontend et un intérêt marqué pour le <abbr
+                    title="Domain-Driven Design">DDD</abbr>, les tests automatisés et la réduction de dette technique.
+            </p>
+
+            <section aria-labelledby="section-experiences">
+                <h2 class="section-title" id="section-experiences">Expériences professionnelles</h2>
+
+                <!-- Castel Group -->
+                <details class="job-entry" open>
+                    <summary>
+                        <h3 class="job-title-summary">Développeur backend sénior – Castel Group</h3>
+                        <span class="job-meta"><span class="job-year">avril 2025 - janvier 2026</span> Nantes</span>
+                    </summary>
+                    <div class="job-content">
+                        <ul class="job-missions">
+                            <li>Stabilisation et remise en production d'une application critique (<strong>15
+                                départs</strong>, code instable)
+                            </li>
+                            <li>
+                                Mentorat, <span lang="en">pair programming</span>, revues de code — fondamentaux,
+                                asynchronisme, principes <abbr
+                                    title="Single responsibility, Open/closed, Liskov substitution, Interface segregation, Dependency inversion">SOLID</abbr>,
+                                injection de dépendances...
+                            </li>
+                            <li>Mise en place de standards qualité (templates
+                                commits/<abbr title="Pull Request">PR</abbr>, <abbr
+                                        title="Intégration et Déploiement Continus">CI/CD</abbr>)
+                            </li>
+                            <li>Conception de stratégie de réduction de la dette technique</li>
+                            <li>Audit d'accessibilité <abbr
+                                    title="Référentiel Général d'Amélioration de l'Accessibilité">RGAA</abbr> interne
+                            </li>
+                        </ul>
+                        <ul class="job-stack">
+                            <li class="chip">Node.js</li>
+                            <li class="chip">TypeScript</li>
+                            <li class="chip">NestJS</li>
+                            <li class="chip">Express</li>
+                            <li class="chip">Jenkins</li>
+                            <li class="chip">Docker</li>
+                            <li class="chip">Gitea</li>
+                            <li class="chip">Odoo</li>
+                        </ul>
+                    </div>
+                </details>
+
+                <!-- iRaiser -->
+                <details class="job-entry">
+                    <summary>
+                        <h3 class="job-title-summary">Développeur <span lang="en">Fullstack</span> – iRaiser</h3>
+                        <span class="job-meta"><span class="job-year">2024 - 2025</span> Distanciel</span>
+                    </summary>
+                    <div class="job-content">
+                        <ul class="job-missions">
+                            <li>Développement de fonctionnalités backend et frontend sur une plateforme <abbr
+                                    title="Software as a Service">SaaS</abbr> de dons traitant plusieurs M€/an
+                            </li>
+                            <li>Revues de code, documentation de <span lang="en">release</span>, alpha-testing et
+                                déploiement
+                            </li>
+                            <li>
+                                Tests <abbr title="End-to-End">E2E</abbr> <abbr
+                                    title="Behavior-Driven Development">BDD</abbr> (Gherkin/Cucumber) et tests unitaires
+                                PHPUnit
+                            </li>
+                        </ul>
+                        <ul class="job-stack">
+                            <li class="chip">PHP</li>
+                            <li class="chip">Symfony</li>
+                            <li class="chip">JavaScript</li>
+                            <li class="chip">PHPUnit</li>
+                            <li class="chip">Cypress</li>
+                            <li class="chip">Architecture hexagonale</li>
+                            <li class="chip">GitLab</li>
+                        </ul>
+                    </div>
+                </details>
+
+                <!-- Ageval Solution -->
+                <details class="job-entry" open>
+                    <summary>
+                        <h3 class="job-title-summary">Développeur <span lang="en">Fullstack</span> sénior – Ageval
+                            Solution</h3>
+                        <span class="job-meta"><span class="job-year">2023 - 2024</span> Angers</span>
+                    </summary>
+                    <div class="job-content">
+                        <ul class="job-missions">
+                            <li>
+                                Stratégie de migration d'un framework <span lang="en">legacy</span> vers Symfony
+                                (cohabitation, refactoring brique à brique)
+                            </li>
+                            <li>
+                                Introduction des pratiques de tests, de l'injection de dépendances, des principes <abbr
+                                    title="Single responsibility, Open/closed, Liskov substitution, Interface segregation, Dependency inversion">SOLID</abbr>
+                            </li>
+                            <li>Optimisation des performances (temps de chargement)</li>
+                        </ul>
+                        <ul class="job-stack">
+                            <li class="chip">PHP</li>
+                            <li class="chip">Symfony</li>
+                            <li class="chip">Vue.js</li>
+                            <li class="chip">PHPUnit</li>
+                            <li class="chip">GitLab</li>
+                            <li class="chip">Scrum</li>
+                        </ul>
+                    </div>
+                </details>
+
+                <!-- Kiplin -->
+                <details class="job-entry" open>
+                    <summary>
+                        <h3 class="job-title-summary">Développeur <span lang="en">Fullstack</span> – Kiplin</h3>
+                        <span class="job-meta"><span class="job-year">2021 - 2023</span> Nantes</span>
+                    </summary>
+                    <div class="job-content">
+                        <ul class="job-missions">
+                            <li>
+                                Recueil des besoins et modélisation <abbr title="Domain-Driven Design">DDD</abbr> —
+                                refonte du moteur de <span lang="en">challenges</span> (scalabilité, maintenabilité)
+                            </li>
+                            <li>
+                                Architecture hexagonale Ports/Adapters, développement backend et frontend micro-services
+                            </li>
+                            <li>
+                                Tests automatisés (unitaires, <abbr title="End-to-End">E2E</abbr>, fonctionnels) avec
+                                <span lang="en">DataBuilder</span> pattern
+                            </li>
+                        </ul>
+                        <ul class="job-stack">
+                            <li class="chip">PHP</li>
+                            <li class="chip">Symfony</li>
+                            <li class="chip">Vue.js</li>
+                            <li class="chip">TypeScript</li>
+                            <li class="chip">PHPUnit</li>
+                            <li class="chip">Playwright</li>
+                            <li class="chip">Architecture hexagonale</li>
+                        </ul>
+                    </div>
+                </details>
+
+                <!-- Iloh -->
+                <details class="job-entry" open>
+                    <summary>
+                        <h3 class="job-title-summary">Développeur <span lang="en">Fullstack</span> Junior – Iloh</h3>
+                        <span class="job-meta"><span class="job-year">2018 - 2021</span>
+              Joué-lès-Tours
+            </span>
+                    </summary>
+                    <div class="job-content">
+                        <ul class="job-missions">
+                            <li>
+                                Projet <em lang="en">from scratch</em> : <abbr
+                                    title="Single Page Application">SPA</abbr> +
+                                <abbr title="Application Programming Interface">API</abbr> REST
+                                — conception &amp; développement en quasi-autonomie
+                            </li>
+                            <li>
+                                Mise en place d'une pipeline <abbr
+                                    title="Intégration et Déploiement Continus">CI/CD</abbr> complète (linting, tests,
+                                déploiement multi-env, rollback)
+                            </li>
+                            <li>
+                                Introduction du <abbr title="Test-Driven Development">TDD</abbr> dans l'équipe et
+                                formation des nouveaux arrivants
+                            </li>
+                            <li>
+                                Gestion de projet : cahier des charges, estimation, <abbr title="Return On Investment">ROI</abbr>
+                            </li>
+                        </ul>
+                        <ul class="job-stack">
+                            <li class="chip">PHP</li>
+                            <li class="chip">Symfony</li>
+                            <li class="chip">Angular</li>
+                            <li class="chip">TypeScript</li>
+                            <li class="chip">PHPUnit</li>
+                            <li class="chip">Cypress</li>
+                            <li class="chip">GitLab CI/CD</li>
+                        </ul>
+                    </div>
+                </details>
+
+            </section>
+        </main>
+
+        <aside aria-label="Compétences, formation et informations" class="cv-sidebar">
+
+            <!-- Pratiques -->
+            <section aria-labelledby="sidebar-pratiques">
+                <h2 class="section-title" id="sidebar-pratiques">Pratiques</h2>
+                <ul class="skill-list">
+                    <li class="skill-item">
+                        <span class="skill-name">Clean Code</span>
+                        <span class="lvl-4" title="Niveau avancé">Niveau avancé</span>
+                    </li>
+                    <li class="skill-item">
+                        <span class="skill-name">Tests unitaires & fonctionnels</span>
+                        <span class="lvl-5" title="Niveau expert">Niveau expert</span>
+                    </li>
+                    <li class="skill-item">
+                        <span class="skill-name">Architecture hexagonale</span>
+                        <span class="lvl-4" title="Niveau avancé">Niveau avancé</span>
+                    </li>
+                    <li class="skill-item">
+                        <span class="skill-name">Tests <abbr title="End-to-End">E2E</abbr></span>
+                        <span class="lvl-4" title="Niveau avancé">Niveau avancé</span>
+                    </li>
+                    <li class="skill-item">
+                        <span class="skill-name">Principes <abbr
+                                title="Single responsibility, Open/closed, Liskov substitution, Interface segregation, Dependency inversion">SOLID</abbr></span>
+                        <span class="lvl-4" title="Niveau avancé">Niveau avancé</span>
+                    </li>
+                    <li class="skill-item">
+                        <span class="skill-name">Accessibilité (<abbr
+                                title="Référentiel Général d'Amélioration de l'Accessibilité">RGAA</abbr>)</span>
+                        <span class="lvl-3" title="Bon niveau">Bon niveau</span>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- Langages & Frameworks -->
+            <section aria-labelledby="sidebar-langages">
+                <h2 class="section-title" id="sidebar-langages">Langages & Frameworks</h2>
+                <ul class="skill-list">
+                    <li class="skill-item">
+                        <span class="skill-name">PHP / Symfony</span>
+                        <span class="lvl-5" title="Niveau expert">Niveau expert</span>
+                    </li>
+                    <li class="skill-item">
+                        <span class="skill-name">TypeScript</span>
+                        <span class="lvl-5" title="Niveau expert">Niveau expert</span>
+                    </li>
+                    <li class="skill-item">
+                        <span class="skill-name">Vue.js</span>
+                        <span class="lvl-4" title="Niveau avancé">Niveau avancé</span>
+                    </li>
+                    <li class="skill-item">
+                        <span class="skill-name">Node.js / NestJS</span>
+                        <span class="lvl-4" title="Niveau avancé">Niveau avancé</span>
+                    </li>
+                    <li class="skill-item">
+                        <span class="skill-name">Angular</span>
+                        <span class="lvl-3" title="Bon niveau">Bon niveau</span>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- Outils & SGBD -->
+            <section aria-labelledby="sidebar-outils">
+                <h2 class="section-title" id="sidebar-outils">Outils & <abbr
+                        title="Système de Gestion de Base de Données">SGBD</abbr></h2>
+                <ul class="global-chips">
+                    <li class="chip">Git</li>
+                    <li class="chip">Docker</li>
+                    <li class="chip">Jenkins</li>
+                    <li class="chip">MySQL</li>
+                    <li class="chip">PostgreSQL</li>
+                    <li class="chip">MSSQL</li>
+                    <li class="chip">RabbitMQ</li>
+                </ul>
+            </section>
+
+            <!-- Méthodologie -->
+            <section aria-labelledby="sidebar-methodo">
+                <h2 class="section-title" id="sidebar-methodo">Méthodologie</h2>
+                <ul class="global-chips">
+                    <li class="chip"><abbr title="Domain-Driven Design">DDD</abbr></li>
+                    <li class="chip"><abbr title="Test-Driven Development">TDD</abbr></li>
+                    <li class="chip">Tests first</li>
+                    <li class="chip">Scrum</li>
+                    <li class="chip">Kanban</li>
+                    <li class="chip">Conventional commit</li>
+                    <li class="chip">Conventional review</li>
+                </ul>
+            </section>
+
+            <!-- Formation -->
+            <section aria-labelledby="sidebar-formation">
+                <h2 class="section-title" id="sidebar-formation">Formation</h2>
+                <ul class="edu-list">
+                    <li class="edu-item">
+                        <p class="edu-period">2018 – 2021</p>
+                        <p class="edu-degree">Diplôme d'ingénieur — Ingénierie Logicielle</p>
+                        <p class="edu-school"><abbr title="Institut Mines Télécom">IMT</abbr> Atlantique</p>
+                    </li>
+                    <li class="edu-item">
+                        <p class="edu-period">2016 – 2018</p>
+                        <p class="edu-school">
+                            <abbr title="Institut Universitaire Technologique">IUT</abbr> <abbr
+                                title="Reims Chalon en Champagne">RCC</abbr>
+                        </p>
+                        <p class="edu-degree"><abbr title="Diplôme Universitaire de Technologie">DUT</abbr> Informatique
+                        </p>
+                    </li>
+                    <li class="edu-item">
+                        <p class="edu-period">2024</p>
+                        <p class="edu-school">Empreinte Digitale</p>
+                        <p class="edu-degree">Développer accessible avec le RGAA</p>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- Intérêts -->
+            <section aria-labelledby="sidebar-interets">
+                <h2 class="section-title" id="sidebar-interets">Intérêts</h2>
+                <ul class="interests-list">
+                    <li>Meetup, DevFest, Nantes Craft</li>
+                    <li>Harpe</li>
+                    <li>Plongée sous-marine</li>
+                </ul>
+            </section>
+
+        </aside>
+    </div>
+</div>
+
+</body>
+</html>
