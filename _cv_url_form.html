@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Configurateur de CV</title>
+</head>
+<body>
+
+<h1>Configurateur de CV</h1>
+
+<form id="cv-form" novalidate>
+    <fieldset>
+        <legend>Couleurs</legend>
+        <label for="color1">Couleur principale</label>
+        <input
+                aria-required="false"
+                autocomplete="off"
+                id="color1"
+                maxlength="6"
+                name="color1"
+                type="text"
+                value=""
+        />
+
+        <label for="color2">Couleur secondaire</label>
+        <input
+                aria-required="false"
+                autocomplete="off"
+                id="color2"
+                maxlength="6"
+                name="color2"
+                type="text"
+                value=""
+        />
+    </fieldset>
+
+    <label for="job-title">Titre du poste</label>
+    <input
+            autocomplete="off"
+            id="job-title"
+            name="jobTitle"
+            placeholder="Développeur Fullstack"
+            type="text"
+    />
+
+    <!-- Mots-clés à mettre en surbrillance -->
+    <fieldset>
+        <legend>Mots-clés à mettre en surbrillance</legend>
+
+        <label>
+            <input name="php" type="checkbox" value="1"/>
+            PHP
+        </label>
+        <label>
+            <input name="clean" type="checkbox" value="1"/>
+            Clean Code
+        </label>
+        <label>
+            <input name="front" type="checkbox" value="1"/>
+            Front
+        </label>
+    </fieldset>
+
+    <button type="submit">Générer le CV</button>
+
+</form>
+
+<script>
+    const color1 = document.getElementById('color1');
+    const color2 = document.getElementById('color2');
+    const form = document.getElementById('cv-form');
+
+    /** Construction de l'URL et redirection */
+    form.addEventListener('submit', (event) => {
+        event.preventDefault();
+        const data = new FormData(form);
+        const params = new URLSearchParams();
+
+        const color1Val = color1.value.trim();
+        if (color1Val) params.set('color1', color1Val);
+
+        const color2Val = color2.value.trim();
+        if (color2Val) params.set('color2', color2Val);
+
+        const jobTitle = data.get('jobTitle')?.trim();
+        if (jobTitle) params.set('jobTitle', jobTitle);
+
+        const checkboxNames = new Set(
+            [...form.querySelectorAll('input[type="checkbox"]')].map(cb => cb.name)
+        );
+        for (const key of checkboxNames) {
+            if (data.get(key) === '1') {
+                params.set(key, '1');
+            }
+        }
+
+        window.location.href = `./index.html?${params.toString()}`;
+    });
+</script>
+
+</body>
+</html>
