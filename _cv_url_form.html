@@ -48,18 +48,33 @@
     <fieldset>
         <legend>Mots-clés à mettre en surbrillance</legend>
 
-        <label>
-            <input name="php" type="checkbox" value="1"/>
-            PHP
-        </label>
-        <label>
-            <input name="clean" type="checkbox" value="1"/>
-            Clean Code
-        </label>
-        <label>
-            <input name="front" type="checkbox" value="1"/>
-            Front
-        </label>
+        <fieldset>
+            <legend>Backend</legend>
+            <label>
+                <input name="php" type="checkbox" value="1"/>
+                PHP
+            </label>
+        </fieldset>
+
+        <fieldset>
+            <legend>Pratiques</legend>
+            <label>
+                <input name="clean" type="checkbox" value="1"/>
+                Clean Code
+            </label>
+        </fieldset>
+
+        <fieldset>
+            <legend>Frontend</legend>
+            <label>
+                <input name="front" type="checkbox" value="1"/>
+                Front
+            </label>
+            <label>
+                <input name="js" type="checkbox" value="1"/>
+                Javascript
+            </label>
+        </fieldset>
     </fieldset>
 
     <button type="submit">Générer le CV</button>
