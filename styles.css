@@ -57,6 +57,7 @@ html {
 
 /* Corps de page  =============================== */
 body {
+    cursor: default;
     background: #e5e7eb;
     font-family: 'DM Sans', sans-serif;
     color: var(--ink);
