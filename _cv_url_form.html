@@ -105,6 +105,26 @@
         </fieldset>
     </fieldset>
 
+    <!-- Expériences à ouvrir -->
+    <fieldset>
+        <legend>Expériences à ouvrir</legend>
+
+        <fieldset>
+            <legend>Expériences professionnelles</legend>
+            <label><input name="xp_iraiser" type="checkbox" value="open"/> iRaiser</label>
+            <label><input name="xp_iloh" type="checkbox" value="open"/> Iloh</label>
+        </fieldset>
+
+        <fieldset>
+            <legend>Expériences personnelles</legend>
+            <label><input name="xp_iut" type="checkbox" value="open"/> IUT</label>
+            <label><input name="xp_inkside" type="checkbox" value="open"/> Inkside</label>
+            <label><input name="xp_design4green" type="checkbox" value="open"/> Design4Green</label>
+            <label><input name="xp_unlock" type="checkbox" value="open"/> Unlock Online</label>
+        </fieldset>
+
+    </fieldset>
+
     <button type="submit">Générer le CV</button>
 
 </form>
@@ -133,9 +153,8 @@
             [...form.querySelectorAll('input[type="checkbox"]')].map(cb => cb.name)
         );
         for (const key of checkboxNames) {
-            if (data.get(key) === '1') {
-                params.set(key, '1');
-            }
+            const val = data.get(key);
+            if (val !== null) params.set(key, val);
         }
 
         window.location.href = `./index.html?${params.toString()}`;
