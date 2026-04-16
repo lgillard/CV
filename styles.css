@@ -307,17 +307,16 @@ body {
     padding-bottom: 0;
 }
 
-.job-entry summary {
+.job-details summary {
     list-style: none;
     cursor: pointer;
     display: grid;
     grid-template-columns: 1fr auto;
     align-items: baseline;
     gap: 8px;
-    padding: 4px 0;
 }
 
-.job-entry summary:focus-visible {
+.job-details summary:focus-visible {
     outline: 2px solid var(--color-1);
     outline-offset: 2px;
     border-radius: var(--radius);
@@ -429,9 +428,7 @@ body {
         display: none;
     }
 
-    .job-entry summary::-webkit-details-marker {
-        display: none;
-    }
+
 }
 
 @page {
