@@ -17,3 +17,4 @@ Example: `[ADD] Ability to customize color through url param`
 | [STYLE]   | Display modified       |
 | [CONTENT] | Content modified       |
 | [DOC]     | Documentation modified |
+| [AUTO]    | Code generated         |
