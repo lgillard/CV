@@ -411,6 +411,18 @@ details[open] > summary .job-title-summary::before {
     background: var(--color-2);
 }
 
+.only-if-highlighted {
+    display: none;
+}
+
+.chip:has(> strong) .only-if-highlighted {
+    display: inline;
+}
+
+.chip.only-if-highlighted:has(> strong) {
+    display: block;
+}
+
 .global-chips {
     display: flex;
     flex-wrap: wrap;
