@@ -14,10 +14,7 @@ function getJobTitle(params) {
  * @param {string} jobTitle
  */
 function updateDocumentTitle(jobTitle) {
-    const el = document.getElementById('document-title');
-    if (!el) return;
-
-    el.textContent = `CV de Julien Gillard - ${jobTitle}`;
+    document.title = `CV – Julien Gillard · ${jobTitle}`;
 }
 
 /**

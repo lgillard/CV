@@ -14,24 +14,18 @@
         <legend>Couleurs</legend>
         <label for="color1">Couleur principale</label>
         <input
-                aria-required="false"
-                autocomplete="off"
                 id="color1"
-                maxlength="6"
                 name="color1"
-                type="text"
-                value=""
+                type="color"
+                value="#0f766e"
         />
 
         <label for="color2">Couleur secondaire</label>
         <input
-                aria-required="false"
-                autocomplete="off"
                 id="color2"
-                maxlength="6"
                 name="color2"
-                type="text"
-                value=""
+                type="color"
+                value="#ccfbf1"
         />
     </fieldset>
 
@@ -61,6 +55,14 @@
             <label>
                 <input name="jelix" type="checkbox" value="1"/>
                 Jelix
+            </label>
+        </fieldset>
+
+        <fieldset>
+            <legend>Data</legend>
+            <label>
+                <input name="data" type="checkbox" value="1"/>
+                Data (SQL, ORM, SGBD)
             </label>
         </fieldset>
 
@@ -97,6 +99,10 @@
             <label>
                 <input name="js" type="checkbox" value="1"/>
                 Javascript
+            </label>
+            <label>
+                <input name="jquery" type="checkbox" value="1"/>
+                JQuery
             </label>
             <label>
                 <input name="smarty" type="checkbox" value="1"/>
@@ -140,10 +146,10 @@
         const data = new FormData(form);
         const params = new URLSearchParams();
 
-        const color1Val = color1.value.trim();
+        const color1Val = color1.value.trim().replace(/^#/, '');
         if (color1Val) params.set('color1', color1Val);
 
-        const color2Val = color2.value.trim();
+        const color2Val = color2.value.trim().replace(/^#/, '');
         if (color2Val) params.set('color2', color2Val);
 
         const jobTitle = data.get('jobTitle')?.trim();
