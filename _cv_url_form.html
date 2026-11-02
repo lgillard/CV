@@ -4,31 +4,54 @@
     <meta charset="UTF-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <title>Configurateur de CV</title>
+    <style>
+        body { font-family: sans-serif; max-width: 600px; margin: 32px auto; padding: 0 16px; }
+        h1 { margin-bottom: 24px; }
+        fieldset { border: 1px solid #ccc; border-radius: 4px; padding: 12px 16px; margin-bottom: 16px; }
+        legend { font-weight: 600; padding: 0 6px; }
+        label { display: block; margin: 6px 0; }
+        label:has(input[type="checkbox"]), label:has(input[type="radio"]) { display: inline-flex; align-items: center; gap: 6px; margin-right: 12px; }
+        input[type="text"], input[type="color"] { margin-top: 2px; }
+        .cv-type-group { display: flex; gap: 8px; margin-top: 6px; }
+        .cv-type-group label { display: flex; align-items: center; gap: 6px; padding: 6px 14px; border: 2px solid #ccc; border-radius: 4px; cursor: pointer; }
+        .cv-type-group label:has(input:checked) { border-color: #0f766e; background: #f0fdf9; }
+        button { margin-top: 8px; padding: 8px 20px; background: #0f766e; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 14px; }
+        button:hover { background: #0d6460; }
+        .section-toggle { transition: none; }
+    </style>
 </head>
 <body>
 
 <h1>Configurateur de CV</h1>
 
 <form id="cv-form" novalidate>
+
+    <!-- Type de CV -->
+    <fieldset>
+        <legend>CV cible</legend>
+        <div class="cv-type-group">
+            <label>
+                <input checked name="cvType" type="radio" value="dev"/>
+                Développeur
+            </label>
+            <label>
+                <input name="cvType" type="radio" value="po"/>
+                Product Owner / PM
+            </label>
+        </div>
+    </fieldset>
+
+    <!-- Couleurs -->
     <fieldset>
         <legend>Couleurs</legend>
         <label for="color1">Couleur principale</label>
-        <input
-                id="color1"
-                name="color1"
-                type="color"
-                value="#0f766e"
-        />
+        <input id="color1" name="color1" type="color" value="#0f766e"/>
 
         <label for="color2">Couleur secondaire</label>
-        <input
-                id="color2"
-                name="color2"
-                type="color"
-                value="#ccfbf1"
-        />
+        <input id="color2" name="color2" type="color" value="#ccfbf1"/>
     </fieldset>
 
+    <!-- Titre du poste -->
     <label for="job-title">Titre du poste</label>
     <input
             autocomplete="off"
@@ -38,81 +61,77 @@
             type="text"
     />
 
-    <!-- Mots-clés à mettre en surbrillance -->
-    <fieldset>
+    <!-- Mots-clés CV Dev -->
+    <fieldset id="dev-keywords" class="section-toggle">
         <legend>Mots-clés à mettre en surbrillance</legend>
 
         <fieldset>
             <legend>Backend</legend>
-            <label>
-                <input name="php" type="checkbox" value="1"/>
-                PHP
-            </label>
-            <label>
-                <input name="node" type="checkbox" value="1"/>
-                Node.js
-            </label>
-            <label>
-                <input name="jelix" type="checkbox" value="1"/>
-                Jelix
-            </label>
+            <label><input name="php" type="checkbox" value="1"/> PHP</label>
+            <label><input name="node" type="checkbox" value="1"/> Node.js</label>
+            <label><input name="jelix" type="checkbox" value="1"/> Jelix</label>
         </fieldset>
 
         <fieldset>
             <legend>Data</legend>
-            <label>
-                <input name="data" type="checkbox" value="1"/>
-                Data (SQL, ORM, SGBD)
-            </label>
+            <label><input name="data" type="checkbox" value="1"/> Data (SQL, ORM, SGBD)</label>
         </fieldset>
 
         <fieldset>
             <legend>Pratiques</legend>
-            <label>
-                <input name="clean" type="checkbox" value="1"/>
-                Clean Code
-            </label>
-            <label>
-                <input name="git" type="checkbox" value="1"/>
-                Git
-            </label>
-            <label>
-                <input name="devops" type="checkbox" value="1"/>
-                Devops
-            </label>
-            <label>
-                <input name="rgesn" type="checkbox" value="1"/>
-                Eco-conception
-            </label>
+            <label><input name="clean" type="checkbox" value="1"/> Clean Code</label>
+            <label><input name="git" type="checkbox" value="1"/> Git</label>
+            <label><input name="devops" type="checkbox" value="1"/> DevOps</label>
+            <label><input name="rgesn" type="checkbox" value="1"/> Éco-conception</label>
         </fieldset>
 
         <fieldset>
             <legend>Frontend</legend>
-            <label>
-                <input name="front" type="checkbox" value="1"/>
-                Front
-            </label>
-            <label>
-                <input name="rgaa" type="checkbox" value="1"/>
-                RGAA
-            </label>
-            <label>
-                <input name="js" type="checkbox" value="1"/>
-                Javascript
-            </label>
-            <label>
-                <input name="jquery" type="checkbox" value="1"/>
-                JQuery
-            </label>
-            <label>
-                <input name="smarty" type="checkbox" value="1"/>
-                Smarty
-            </label>
+            <label><input name="front" type="checkbox" value="1"/> Front</label>
+            <label><input name="rgaa" type="checkbox" value="1"/> RGAA</label>
+            <label><input name="js" type="checkbox" value="1"/> Javascript</label>
+            <label><input name="jquery" type="checkbox" value="1"/> JQuery</label>
+            <label><input name="smarty" type="checkbox" value="1"/> Smarty</label>
         </fieldset>
     </fieldset>
 
-    <!-- Expériences à ouvrir -->
-    <fieldset>
+    <!-- Mots-clés CV PO -->
+    <fieldset id="po-keywords" class="section-toggle" hidden>
+        <legend>Mots-clés à mettre en surbrillance</legend>
+
+        <fieldset>
+            <legend>Méthodes agiles</legend>
+            <label><input name="agile" type="checkbox" value="1"/> Agile / Scrum / Kanban</label>
+        </fieldset>
+
+        <fieldset>
+            <legend>Analyse & domaine</legend>
+            <label><input name="domain" type="checkbox" value="1"/> DDD, specs, analyse fonctionnelle</label>
+        </fieldset>
+
+        <fieldset>
+            <legend>Data & métriques</legend>
+            <label><input name="data" type="checkbox" value="1"/> KPIs, données, ROI</label>
+        </fieldset>
+
+        <fieldset>
+            <legend>Parties prenantes</legend>
+            <label><input name="stakeholder" type="checkbox" value="1"/> Communication, coordination</label>
+        </fieldset>
+
+        <fieldset>
+            <legend>UX & qualité</legend>
+            <label><input name="ux" type="checkbox" value="1"/> UX, tests utilisateurs, accessibilité</label>
+        </fieldset>
+
+        <fieldset>
+            <legend>Delivery</legend>
+            <label><input name="delivery" type="checkbox" value="1"/> Release, CI/CD, déploiement</label>
+        </fieldset>
+    </fieldset>
+
+    <!-- Expériences à ouvrir – Dev -->
+    <fieldset id="dev-experiences" class="section-toggle">
         <legend>Expériences à ouvrir</legend>
 
         <fieldset>
@@ -123,12 +142,30 @@
 
         <fieldset>
             <legend>Expériences personnelles</legend>
-            <label><input name="xp_iut" type="checkbox" value="open"/> IUT</label>
+            <label><input name="xp_iut" type="checkbox" value="open"/> IUT Reims</label>
             <label><input name="xp_inkside" type="checkbox" value="open"/> Inkside</label>
             <label><input name="xp_design4green" type="checkbox" value="open"/> Design4Green</label>
             <label><input name="xp_unlock" type="checkbox" value="open"/> Unlock Online</label>
         </fieldset>
+    </fieldset>
 
+    <!-- Expériences à ouvrir – PO -->
+    <fieldset id="po-experiences" class="section-toggle" hidden>
+        <legend>Expériences à ouvrir</legend>
+
+        <fieldset>
+            <legend>Expériences professionnelles</legend>
+            <label><input name="xp_iraiser" type="checkbox" value="open"/> iRaiser</label>
+            <label><input name="xp_ageval" type="checkbox" value="open"/> Ageval Solution</label>
+        </fieldset>
+
+        <fieldset>
+            <legend>Expériences personnelles</legend>
+            <label><input name="xp_iut" type="checkbox" value="open"/> IUT Reims</label>
+            <label><input name="xp_design4green" type="checkbox" value="open"/> Design4Green</label>
+            <label><input name="xp_ehpad" type="checkbox" value="open"/> Concerts EHPAD</label>
+            <label><input name="xp_inpcd" type="checkbox" value="open"/> Il nous pompe ce diabète</label>
+        </fieldset>
     </fieldset>
 
     <button type="submit">Générer le CV</button>
@@ -136,34 +173,76 @@
 </form>
 
 <script>
-    const color1 = document.getElementById('color1');
-    const color2 = document.getElementById('color2');
     const form = document.getElementById('cv-form');
+    const color1Input = document.getElementById('color1');
+    const color2Input = document.getElementById('color2');
+    const jobTitleInput = document.getElementById('job-title');
 
-    /** Construction de l'URL et redirection */
+    const sections = {
+        dev: {
+            keywords: document.getElementById('dev-keywords'),
+            experiences: document.getElementById('dev-experiences'),
+            file: './index.html',
+            placeholder: 'Développeur Fullstack',
+        },
+        po: {
+            keywords: document.getElementById('po-keywords'),
+            experiences: document.getElementById('po-experiences'),
+            file: './po.html',
+            placeholder: 'Product Owner',
+        },
+    };
+
+    function getSelectedType() {
+        return document.querySelector('input[name="cvType"]:checked')?.value ?? 'dev';
+    }
+
+    function updateVisibility() {
+        const type = getSelectedType();
+        for (const [key, s] of Object.entries(sections)) {
+            const active = key === type;
+            s.keywords.hidden = !active;
+            s.experiences.hidden = !active;
+            if (active) jobTitleInput.placeholder = s.placeholder;
+        }
+    }
+
+    document.querySelectorAll('input[name="cvType"]').forEach(r =>
+        r.addEventListener('change', updateVisibility)
+    );
+    updateVisibility();
+
     form.addEventListener('submit', (event) => {
         event.preventDefault();
-        const data = new FormData(form);
+
+        const type = getSelectedType();
+        const targetFile = sections[type].file;
+        const activeKeywordsFieldset = sections[type].keywords;
+        const activeXpFieldset = sections[type].experiences;
+
         const params = new URLSearchParams();
 
-        const color1Val = color1.value.trim().replace(/^#/, '');
+        const color1Val = color1Input.value.trim().replace(/^#/, '');
         if (color1Val) params.set('color1', color1Val);
 
-        const color2Val = color2.value.trim().replace(/^#/, '');
+        const color2Val = color2Input.value.trim().replace(/^#/, '');
         if (color2Val) params.set('color2', color2Val);
 
-        const jobTitle = data.get('jobTitle')?.trim();
+        const jobTitle = jobTitleInput.value.trim();
         if (jobTitle) params.set('jobTitle', jobTitle);
 
-        const checkboxNames = new Set(
-            [...form.querySelectorAll('input[type="checkbox"]')].map(cb => cb.name)
-        );
-        for (const key of checkboxNames) {
-            const val = data.get(key);
-            if (val !== null) params.set(key, val);
+        const checkboxes = [
+            ...activeKeywordsFieldset.querySelectorAll('input[type="checkbox"]'),
+            ...activeXpFieldset.querySelectorAll('input[type="checkbox"]'),
+        ];
+        const seen = new Set();
+        for (const cb of checkboxes) {
+            if (seen.has(cb.name)) continue;
+            seen.add(cb.name);
+            if (cb.checked) params.set(cb.name, cb.value);
         }
 
-        window.location.href = `./index.html?${params.toString()}`;
+        window.location.href = `${targetFile}?${params.toString()}`;
     });
 </script>
 
